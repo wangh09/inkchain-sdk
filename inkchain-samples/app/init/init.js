@@ -12,7 +12,7 @@ let installCCHandler = require('../install-chaincode');
 let instantiateCCHandler = require('../instantiate-pre');
 let invokeHandler = require('../invoke-transaction');
 
-createChannelHandler.createChannel(CHANNEL_NAME, "../test/alicloud/channel.tx", 'user', 'org1').then((result) => {
+createChannelHandler.createChannel(CHANNEL_NAME, "../artifacts/channel/mychannel.tx", 'user', 'org1').then((result) => {
     console.log(result);
     setTimeout(()=>{
         joinChannelHandler.joinChannel(CHANNEL_NAME,['peer1'],'user', 'org1').then((result) => {
