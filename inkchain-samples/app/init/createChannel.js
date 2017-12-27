@@ -3,6 +3,6 @@
  */
 require('../config');
 let createChannelHandler = require('../create-channel');
-createChannelHandler.createChannel("mychannel", "../artifacts/channel/mychannel.tx", 'user', 'org1').then((result) => {
+createChannelHandler.createChannel("mychannel", "../test/alicloud/channel.tx", 'user', 'org1').then((result) => {
    console.log(result);
 });
