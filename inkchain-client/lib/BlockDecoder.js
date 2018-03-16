@@ -545,6 +545,8 @@ payload -- {}
 		var proto_processed_transaction = _transProto.ProcessedTransaction.decode(processed_transaction_bytes);
 		processed_transaction.validationCode = proto_processed_transaction.getValidationCode();
 		processed_transaction.transactionEnvelope = decodeBlockDataEnvelope(proto_processed_transaction.getTransactionEnvelope());
+		processed_transaction.blockHash = proto_processed_transaction.getBlockHash().toString('hex');
+		processed_transaction.inkFee = proto_processed_transaction.getInkFee().toString();
 		return processed_transaction;
 	}
 };
@@ -1331,8 +1333,8 @@ function decodeKVRead(proto_kv_read) {
 	let proto_version = proto_kv_read.getVersion();
 	if (proto_version) {
 		kv_read.version = {};
-		kv_read.version.block_num = proto_version.getBlockNum();
-		kv_read.version.tx_num = proto_version.getTxNum();
+		kv_read.version.block_num = proto_version.getBlockNum().toString();
+		kv_read.version.tx_num = proto_version.getTxNum().toString();
 	} else {
 		kv_read.version = null;
 	}
