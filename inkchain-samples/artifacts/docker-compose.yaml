@@ -153,8 +153,8 @@ services:
      - LOCAL_HOST="qtum_insight"
     volumes:
      - ./qtum/data:/work/qtum-api/data
-#     - ./qtum/qtumcore-node.json:/work/qtum-api/qtumcore-node.json
-
+     - ./qtum/conf/qtumcore-node.json:/work/qtum-api/qtumcore-node.json
+     - ./qtum/conf/qtum.conf:/work/qtum-api/data/qtum.conf
     depends_on:
      - mongo_db
 

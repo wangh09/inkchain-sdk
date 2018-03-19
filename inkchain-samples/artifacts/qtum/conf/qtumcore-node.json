@@ -11,8 +11,8 @@
 	"db": {
 	  "user":"admin",
 	  "password":"j2DE3j10EOpe9475",
-	  "host":${MONGO_HOST},
-	  "port":${MONGO_PORT},
+	  "host":"mongo_db",
+	  "port":27017,
 	  "database":"admin"
 	},
 	"erc20Config": {
